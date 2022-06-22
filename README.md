@@ -9,3 +9,4 @@
 - the first 2 blocks save important information such as the file names and address, and a list of the fat listing off which blocks are blank
 - Simulates a small database containing a log of historical events with an associated index
 - The historical event's information can be found by searching the index through using the search in the program's terminal
+- Remember for windows to install mingw32 and use mingw32.mak -f [makefile] to run the makfile
