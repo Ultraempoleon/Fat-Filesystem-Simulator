@@ -165,7 +165,6 @@ Filesys::Filesys(string disk_name, int number_of_blocks, int block_size): Sdisk(
         cout << "No filesystem, building filesystem \n";
         x = buildfs();
         setpoundamount();
-        //tester();
     }
 
     else {
@@ -987,7 +986,7 @@ int Table::Search(string value){
     while (value.size() != 5){
         value += " ";
     }
-    cout << "\nlooking for " << value;
+    //cout << "\nlooking for " << value;
 
     while (!found){ //checks all of index file
         buffer.clear();
@@ -997,8 +996,8 @@ int Table::Search(string value){
             cout << "\nSomething went wrong using getblock in Search function";
         }
 
-        cout << "\nBlock being checked\n" << buffer;
-        cout << endl;
+        // cout << "\nBlock being checked\n" << buffer;
+        // cout << endl;
 
         //searches the first value in the block before going into the loop
         value_check = buffer.substr(0, 5);
@@ -1041,14 +1040,14 @@ int Table::Search(string value){
         }
 
     }
-    cout << "\nfound?: " << value_check;
+    //cout << "\nfound?: " << value_check;
 
     //this line exists to cover when the first item on the block, the index returns 9, we want 0
     if(index < 10){
         index = 0;
     }
 
-    cout << "\ncurrent index " << index;
+    //cout << "\ncurrent index " << index;
     string newbuffer = buffer.substr(index+5, 4);
     block_number = std::stoi(newbuffer);
 

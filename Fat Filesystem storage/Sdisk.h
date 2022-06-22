@@ -50,7 +50,6 @@ class Filesys: public Sdisk
     vector<int> getfirstblock();
     vector<int> getfat();
 
-
     private:
     int rootsize; //max number of entries in ROOT
     int fatsize; //number of blocks occupied by FAT
