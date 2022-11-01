@@ -928,7 +928,14 @@ int Table::Build_Table(string input_file){
     int x;
     int inc = 1;
     int bs = getblocksize();
-    bs = roundten(bs);
+    bs = roundten(bs);  //Block size is 128, bs is 120
+
+    //Bug Fix
+    fat = getfat();
+    if (fat[192] != 193){
+        cout << "\nDatabase already exists, Database not added";
+        return 1;
+    }
 
     //writes every line from the file onto a new block
     while(getline(infile, line)){

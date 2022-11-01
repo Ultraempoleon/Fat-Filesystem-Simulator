@@ -48,15 +48,16 @@ int main() {
     if (secondblank < s.length()){
       op2=s.substr(secondblank+1);
     }
-    if (command == "dir" || "ls"){
+    if (command == "dir"){
       if (op1.empty()){
         checker = shell1.dir();
       }
       else {
-        cout << "\nOnly dir was read";
+        cout << "\nOnly dir was read\n";
         checker = shell1.dir();
       }
     }
+
     // add
     else if (command == "add"){
       if (op1.empty()){
@@ -70,6 +71,7 @@ int main() {
       checker = shell1.add(op1, op2);
       continue;
     } //end of add
+
     // del
     else if (command == "del"){
       if (op1.empty()){
